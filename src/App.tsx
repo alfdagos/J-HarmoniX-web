@@ -16,7 +16,8 @@ const App = () => (
       {/* MODIFICA QUI: Aggiungiamo basename. 
           Assicurati che corrisponda esattamente al 'base' del tuo vite.config.ts 
       */}
-      <BrowserRouter basename="/J-HarmoniX-web">
+      {/* <BrowserRouter basename="/J-HarmoniX-web"> */}
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
