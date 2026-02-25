@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/j-harmonix-web/', // Obbligatorio se non hai un dominio custom
+  base: '/J-HarmoniX-web/', // Obbligatorio se non hai un dominio custom
   server: {
     host: "::",
     port: 8080,
