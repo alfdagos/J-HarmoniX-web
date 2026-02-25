@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Github, Star } from "lucide-react";
 import TerminalDemo from "@/components/TerminalDemo";
 import FeaturesSection from "@/components/FeaturesSection";
+import QuickStartSection from "@/components/QuickStartSection";
 import ParametersSection from "@/components/ParametersSection";
 import ExamplesSection from "@/components/ExamplesSection";
 import Footer from "@/components/Footer";
@@ -74,6 +75,7 @@ const Index = () => {
       </section>
 
       <FeaturesSection />
+      <QuickStartSection />
       <ParametersSection />
       <ExamplesSection />
       <Footer />
