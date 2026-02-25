@@ -13,7 +13,10 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      {/* MODIFICA QUI: Aggiungiamo basename. 
+          Assicurati che corrisponda esattamente al 'base' del tuo vite.config.ts 
+      */}
+      <BrowserRouter basename="/J-HarmoniX-web">
         <Routes>
           <Route path="/" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
@@ -24,4 +27,4 @@ const App = () => (
   </QueryClientProvider>
 );
 
-export default App;
+export default App; 
