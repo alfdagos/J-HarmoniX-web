@@ -34,7 +34,7 @@ const examples = [
 ];
 
 const ExamplesSection = () => (
-  <section className="py-24 px-6">
+  <section id="esempi" className="py-24 px-6 scroll-mt-16">
     <div className="max-w-5xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}

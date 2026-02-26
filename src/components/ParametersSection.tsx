@@ -40,7 +40,7 @@ const parameters = [
 ];
 
 const ParametersSection = () => (
-  <section className="py-24 px-6 bg-secondary/30">
+  <section id="parametri" className="py-24 px-6 bg-secondary/30 scroll-mt-16">
     <div className="max-w-5xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
