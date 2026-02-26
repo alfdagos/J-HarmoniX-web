@@ -1,15 +1,18 @@
 import { motion } from "framer-motion";
-import { Github, Star } from "lucide-react";
+import { Github, Star, Globe } from "lucide-react";
 import TerminalDemo from "@/components/TerminalDemo";
 import FeaturesSection from "@/components/FeaturesSection";
 import QuickStartSection from "@/components/QuickStartSection";
 import ParametersSection from "@/components/ParametersSection";
 import ExamplesSection from "@/components/ExamplesSection";
 import Footer from "@/components/Footer";
+import { useLocale } from "@/i18n/useLocale";
 
 const GITHUB_URL = "https://github.com/alfdagos/J-Harmonix";
 
 const Index = () => {
+  const { locale, setLocale, t } = useLocale();
+
   return (
     <div className="min-h-screen bg-gradient-dark">
       {/* Navbar */}
@@ -20,10 +23,10 @@ const Index = () => {
           </a>
           <div className="hidden md:flex items-center gap-6">
             {[
-              { label: "Features", id: "features" },
-              { label: "Quick Start", id: "quickstart" },
-              { label: "Parametri", id: "parametri" },
-              { label: "Esempi", id: "esempi" },
+              { label: t("nav_features"), id: "features" },
+              { label: t("nav_quickstart"), id: "quickstart" },
+              { label: t("nav_parameters"), id: "parametri" },
+              { label: t("nav_examples"), id: "esempi" },
             ].map((link) => (
               <a
                 key={link.id}
@@ -34,22 +37,31 @@ const Index = () => {
               </a>
             ))}
           </div>
-          <a
-            href={GITHUB_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <Github className="w-4 h-4" />
-            <span className="hidden sm:inline">GitHub</span>
-            <Star className="w-3.5 h-3.5 text-primary" />
-          </a>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => setLocale(locale === "it" ? "en" : "it")}
+              className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors px-2 py-1 rounded-md border border-border/50 hover:border-border"
+              aria-label="Switch language"
+            >
+              <Globe className="w-3.5 h-3.5" />
+              {locale === "it" ? "EN" : "IT"}
+            </button>
+            <a
+              href={GITHUB_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <Github className="w-4 h-4" />
+              <span className="hidden sm:inline">GitHub</span>
+              <Star className="w-3.5 h-3.5 text-primary" />
+            </a>
+          </div>
         </div>
       </nav>
 
       {/* Hero */}
       <section className="relative py-20 px-6 overflow-hidden">
-        {/* Subtle radial glow */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
         </div>
@@ -61,15 +73,15 @@ const Index = () => {
             transition={{ duration: 0.8 }}
           >
             <p className="text-primary font-mono text-sm tracking-widest uppercase mb-6">
-              Jazz Harmony Generator
+              {t("hero_subtitle")}
             </p>
             <h1 className="text-5xl md:text-7xl font-display font-black text-foreground mb-6 leading-tight">
               J-Harmon<span className="text-gradient-gold">iX</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
-              Genera progressioni armoniche jazz dalla riga di comando.
+              {t("hero_desc")}
               <br className="hidden md:block" />
-              15 scale, 4 stili, complessità regolabile e modulazioni avanzate.
+              {t("hero_desc2")}
             </p>
             <a
               href={GITHUB_URL}
@@ -78,7 +90,7 @@ const Index = () => {
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2.5 rounded-lg font-semibold text-sm hover:opacity-90 transition-opacity mb-12"
             >
               <Github className="w-4 h-4" />
-              Scarica da GitHub
+              {t("hero_cta")}
             </a>
           </motion.div>
 
