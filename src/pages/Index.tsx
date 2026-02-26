@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
-import { Github, Star, Globe } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Github, Star, Globe, Menu, X } from "lucide-react";
 import TerminalDemo from "@/components/TerminalDemo";
 import FeaturesSection from "@/components/FeaturesSection";
 import QuickStartSection from "@/components/QuickStartSection";
@@ -12,6 +13,14 @@ const GITHUB_URL = "https://github.com/alfdagos/J-Harmonix";
 
 const Index = () => {
   const { locale, setLocale, t } = useLocale();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const navLinks = [
+    { label: t("nav_features"), id: "features" },
+    { label: t("nav_quickstart"), id: "quickstart" },
+    { label: t("nav_parameters"), id: "parametri" },
+    { label: t("nav_examples"), id: "esempi" },
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-dark">
@@ -21,13 +30,8 @@ const Index = () => {
           <a href="#" className="font-display font-bold text-lg text-foreground shrink-0">
             J-Harmon<span className="text-gradient-gold">iX</span>
           </a>
-          <div className="hidden md:flex items-center gap-6">
-            {[
-              { label: t("nav_features"), id: "features" },
-              { label: t("nav_quickstart"), id: "quickstart" },
-              { label: t("nav_parameters"), id: "parametri" },
-              { label: t("nav_examples"), id: "esempi" },
-            ].map((link) => (
+           <div className="hidden md:flex items-center gap-6">
+            {navLinks.map((link) => (
               <a
                 key={link.id}
                 href={`#${link.id}`}
@@ -56,8 +60,51 @@ const Index = () => {
               <span className="hidden sm:inline">GitHub</span>
               <Star className="w-3.5 h-3.5 text-primary" />
             </a>
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden inline-flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
           </div>
         </div>
+
+        {/* Mobile menu */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="md:hidden overflow-hidden border-t border-border/50"
+            >
+              <div className="flex flex-col gap-1 px-6 py-3">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.id}
+                    href={`#${link.id}`}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+                <button
+                  onClick={() => {
+                    setLocale(locale === "it" ? "en" : "it");
+                    setMobileMenuOpen(false);
+                  }}
+                  className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors py-2 w-fit"
+                >
+                  <Globe className="w-3.5 h-3.5" />
+                  {locale === "it" ? "English" : "Italiano"}
+                </button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
 
       {/* Hero */}
