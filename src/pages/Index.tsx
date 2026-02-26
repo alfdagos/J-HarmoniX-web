@@ -13,20 +13,38 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-dark">
       {/* Navbar */}
-      <nav className="flex items-center justify-between px-6 py-4 max-w-5xl mx-auto">
-        <span className="font-display font-bold text-lg text-foreground">
-          J-Harmon<span className="text-gradient-gold">iX</span>
-        </span>
-        <a
-          href={GITHUB_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-        >
-          <Github className="w-4 h-4" />
-          <span className="hidden sm:inline">GitHub</span>
-          <Star className="w-3.5 h-3.5 text-primary" />
-        </a>
+      <nav className="sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b border-border/50">
+        <div className="flex items-center justify-between px-6 py-3 max-w-5xl mx-auto">
+          <a href="#" className="font-display font-bold text-lg text-foreground shrink-0">
+            J-Harmon<span className="text-gradient-gold">iX</span>
+          </a>
+          <div className="hidden md:flex items-center gap-6">
+            {[
+              { label: "Features", id: "features" },
+              { label: "Quick Start", id: "quickstart" },
+              { label: "Parametri", id: "parametri" },
+              { label: "Esempi", id: "esempi" },
+            ].map((link) => (
+              <a
+                key={link.id}
+                href={`#${link.id}`}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+          <a
+            href={GITHUB_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <Github className="w-4 h-4" />
+            <span className="hidden sm:inline">GitHub</span>
+            <Star className="w-3.5 h-3.5 text-primary" />
+          </a>
+        </div>
       </nav>
 
       {/* Hero */}

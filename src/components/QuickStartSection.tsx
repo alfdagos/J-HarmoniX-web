@@ -42,7 +42,7 @@ const CopyButton = ({ text }: { text: string }) => {
 
 const QuickStartSection = () => {
   return (
-    <section className="py-20 px-6">
+    <section id="quickstart" className="py-20 px-6 scroll-mt-16">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
