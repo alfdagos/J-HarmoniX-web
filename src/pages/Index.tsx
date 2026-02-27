@@ -111,6 +111,32 @@ const Index = () => {
       <section className="relative py-20 px-6 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
+          {/* Floating musical notes */}
+          {["♪", "♫", "♩", "♬", "♪", "♫", "♩", "♬"].map((note, i) => (
+            <motion.span
+              key={i}
+              className="absolute text-primary/15 font-serif select-none"
+              style={{
+                fontSize: `${20 + (i % 4) * 12}px`,
+                left: `${5 + i * 12}%`,
+                top: `${10 + (i % 3) * 30}%`,
+              }}
+              animate={{
+                y: [0, -30, 0, 20, 0],
+                x: [0, 10 * (i % 2 === 0 ? 1 : -1), 0],
+                rotate: [0, 15 * (i % 2 === 0 ? 1 : -1), 0],
+                opacity: [0.15, 0.3, 0.15],
+              }}
+              transition={{
+                duration: 5 + i * 0.7,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: i * 0.5,
+              }}
+            >
+              {note}
+            </motion.span>
+          ))}
         </div>
 
         <div className="relative max-w-4xl mx-auto text-center">
