@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const commands = [
-  { prompt: "shell:> ", command: "generate --tonic Eb --scale MAJOR --form AABA --style JAZZ_MODERN", delay: 60 },
+  { prompt: "J-HarmoniX:> ", command: "generate --tonic Eb --scale MAJOR --form AABA --style JAZZ_MODERN", delay: 60 },
 ];
 
 const output = `
