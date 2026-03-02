@@ -94,7 +94,7 @@ const QuickStartSection = () => {
           <h3 className="font-display font-semibold text-foreground mb-2">{t("qs_first_title")}</h3>
           <p className="text-sm text-muted-foreground mb-4">
             {t("qs_first_desc")}
-            {" "}(<code className="text-primary font-mono">shell:&gt;</code>)
+            {" "}(<code className="text-primary font-mono">J-HarmoniX:&gt;</code>)
           </p>
           <div className="relative">
             <pre className="bg-terminal-bg rounded-lg p-4 pr-12 font-mono text-sm text-terminal-green overflow-x-auto">

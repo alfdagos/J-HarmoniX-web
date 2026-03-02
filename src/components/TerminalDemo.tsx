@@ -54,7 +54,7 @@ const TerminalDemo = () => {
       </div>
       <div className="bg-terminal-bg p-5 font-mono text-sm leading-relaxed min-h-[280px]">
         <div className="flex">
-          <span className="text-primary mr-2">shell:&gt;</span>
+          <span className="text-primary mr-2">J-HarmoniX:&gt;</span>
           <span className="text-terminal-green">{displayedCommand}</span>
           {!showOutput && (
             <span className={`text-primary ml-0.5 ${cursorVisible ? "opacity-100" : "opacity-0"}`}>▌</span>
