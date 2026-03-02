@@ -148,7 +148,7 @@ const Index = () => {
             <p className="text-primary font-mono text-sm tracking-widest uppercase mb-6">
               {t("hero_subtitle")}
             </p>
-            <h1 className="text-5xl md:text-7xl font-display font-black text-foreground mb-6 leading-tight">
+            <h1 className="text-5xl md:text-7xl font-display font-black text-foreground mb-6 leading-tight whitespace-nowrap">
               J-Harmon<span className="text-gradient-gold">iX</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
