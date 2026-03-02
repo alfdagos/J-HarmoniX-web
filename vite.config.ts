@@ -22,8 +22,6 @@ export default defineConfig(({ mode }) => ({
   build: {
     // Target moderni per bundle più piccoli
     target: "es2020",
-    // Ottimizzazione CSS
-    cssMinify: "lightningcss",
     // Chunk splitting per migliorare LCP e TTI
     rollupOptions: {
       output: {
