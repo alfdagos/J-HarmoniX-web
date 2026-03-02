@@ -50,14 +50,10 @@ export default defineConfig(({ mode }) => ({
     chunkSizeWarningLimit: 1000,
     // Source maps in produzione per debugging SEO tecnico
     sourcemap: false,
-    // Minificazione aggressiva
-    minify: "terser",
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-        pure_funcs: ["console.log", "console.info"],
-      },
+    // Minificazione con esbuild (integrato in Vite, nessuna dipendenza extra)
+    minify: "esbuild",
+    esbuildOptions: {
+      drop: ["console", "debugger"],
     },
   },
 }));
