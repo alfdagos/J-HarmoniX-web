@@ -45,7 +45,7 @@ const QuickStartSection = () => {
   ];
 
   return (
-    <section id="quickstart" className="py-20 px-6 scroll-mt-16">
+    <section id="quickstart" aria-labelledby="quickstart-heading" className="py-20 px-6 scroll-mt-16">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -55,14 +55,17 @@ const QuickStartSection = () => {
           className="text-center mb-12"
         >
           <p className="text-primary font-mono text-sm tracking-widest uppercase mb-3">{t("qs_label")}</p>
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground">
+          <h2
+            id="quickstart-heading"
+            className="text-3xl md:text-4xl font-display font-bold text-foreground"
+          >
             Quick Start
           </h2>
         </motion.div>
 
-        <div className="space-y-6">
+        <ol className="space-y-6 list-none p-0 m-0" role="list" aria-label="Passaggi di installazione J-HarmoniX">
           {steps.map((step, i) => (
-            <motion.div
+            <motion.li
               key={i}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -71,18 +74,21 @@ const QuickStartSection = () => {
               className="relative rounded-xl border border-gold-subtle bg-secondary/40 p-5"
             >
               <div className="flex items-center gap-3 mb-3">
-                <step.icon className="w-5 h-5 text-primary" />
+                <step.icon className="w-5 h-5 text-primary" aria-hidden="true" />
                 <h3 className="font-display font-semibold text-foreground">{step.title}</h3>
               </div>
               <div className="relative">
-                <pre className="bg-terminal-bg rounded-lg p-4 pr-12 font-mono text-sm text-terminal-green overflow-x-auto whitespace-pre-wrap">
-                  {step.command}
+                <pre
+                  className="bg-terminal-bg rounded-lg p-4 pr-12 font-mono text-sm text-terminal-green overflow-x-auto whitespace-pre-wrap"
+                  aria-label={`Comando: ${step.command}`}
+                >
+                  <code>{step.command}</code>
                 </pre>
                 <CopyButton text={step.command} label={t("qs_copy_label")} />
               </div>
-            </motion.div>
+            </motion.li>
           ))}
-        </div>
+        </ol>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

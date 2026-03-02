@@ -25,7 +25,7 @@ const FeaturesSection = () => {
   };
 
   return (
-    <section id="features" className="py-24 px-6 scroll-mt-16">
+    <section id="features" aria-labelledby="features-heading" className="py-24 px-6 scroll-mt-16">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -34,32 +34,33 @@ const FeaturesSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-display font-bold text-foreground mb-4">
+          <h2 id="features-heading" className="text-4xl font-display font-bold text-foreground mb-4">
             {t("features_title_pre")}<span className="text-gradient-gold">{t("features_title_highlight")}</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto text-lg">
             {t("features_subtitle")}
           </p>
         </motion.div>
-        <motion.div
+        <motion.ul
           variants={container}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 list-none p-0 m-0"
+          role="list"
         >
           {features.map((f) => (
-            <motion.div
+            <motion.li
               key={f.title}
               variants={item}
               className="bg-gradient-card rounded-xl p-6 border border-gold-subtle hover:glow-gold transition-shadow duration-500"
             >
-              <f.icon className="w-8 h-8 text-primary mb-4" />
+              <f.icon className="w-8 h-8 text-primary mb-4" aria-hidden="true" />
               <h3 className="text-lg font-semibold text-foreground mb-2 font-display">{f.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{f.description}</p>
-            </motion.div>
+            </motion.li>
           ))}
-        </motion.div>
+        </motion.ul>
       </div>
     </section>
   );

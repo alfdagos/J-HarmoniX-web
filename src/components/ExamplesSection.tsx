@@ -14,7 +14,7 @@ const ExamplesSection = () => {
   ];
 
   return (
-    <section id="esempi" className="py-24 px-6 scroll-mt-16">
+    <section id="esempi" aria-labelledby="examples-heading" className="py-24 px-6 scroll-mt-16">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -23,16 +23,16 @@ const ExamplesSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-display font-bold text-foreground mb-4">
+          <h2 id="examples-heading" className="text-4xl font-display font-bold text-foreground mb-4">
             {t("examples_title_pre")}<span className="text-gradient-gold">{t("examples_title_highlight")}</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto text-lg">
             {t("examples_subtitle")}
           </p>
         </motion.div>
-        <div className="grid md:grid-cols-2 gap-5">
+        <ul className="grid md:grid-cols-2 gap-5 list-none p-0 m-0" role="list">
           {examples.map((ex, i) => (
-            <motion.div
+            <motion.li
               key={ex.titleKey}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -47,13 +47,17 @@ const ExamplesSection = () => {
                 </span>
               </div>
               <div className="px-5 pb-5">
-                <pre className="bg-terminal-bg rounded-lg p-3 text-xs font-mono text-terminal-green overflow-x-auto">
-                  <span className="text-primary">$</span> {ex.command}
+                <pre
+                  className="bg-terminal-bg rounded-lg p-3 text-xs font-mono text-terminal-green overflow-x-auto"
+                  aria-label={`Esempio ${t(ex.titleKey)}: ${ex.command}`}
+                >
+                  <span className="text-primary" aria-hidden="true">$</span>{" "}
+                  <code>{ex.command}</code>
                 </pre>
               </div>
-            </motion.div>
+            </motion.li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

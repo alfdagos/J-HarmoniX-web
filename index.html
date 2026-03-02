@@ -1,34 +1,231 @@
 <!doctype html>
-<html lang="it">
+<html lang="it" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ═══════════════════════════════════════════
+         PRIMARY SEO META TAGS
+    ═══════════════════════════════════════════ -->
+    <title>J-HarmoniX – Jazz Harmony Generator CLI | Open Source</title>
+    <meta name="description" content="Genera progressioni armoniche jazz dalla CLI. 15 scale, 4 stili jazz, modulazioni avanzate. Gratuito e open source su GitHub. Scaricalo ora." />
+    <meta name="author" content="alfdagos" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="keywords" content="jazz harmony generator, progressioni armoniche jazz, CLI jazz, generatore accordi jazz, scale jazz, armonia jazz, jazz chord progression, music theory CLI, J-HarmoniX, open source music" />
+    <meta name="theme-color" content="#0f0f0f" />
+    <meta name="color-scheme" content="dark" />
+
+    <!-- ═══════════════════════════════════════════
+         CANONICAL & HREFLANG
+    ═══════════════════════════════════════════ -->
+    <link rel="canonical" href="https://j-harmonix.dev/" />
+    <link rel="alternate" hreflang="it" href="https://j-harmonix.dev/" />
+    <link rel="alternate" hreflang="en" href="https://j-harmonix.dev/" />
+    <link rel="alternate" hreflang="x-default" href="https://j-harmonix.dev/" />
+
+    <!-- ═══════════════════════════════════════════
+         ICONS
+    ═══════════════════════════════════════════ -->
     <link rel="icon" href="/favicon.png" type="image/png" />
-    <title>J-HarmoniX – Jazz Harmony Generator</title>
-    <meta name="description" content="Genera progressioni armoniche jazz dalla CLI. 15 scale, 4 stili, modulazioni avanzate.">
-    <meta name="author" content="J-HarmoniX" />
-    
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <link rel="shortcut icon" href="/favicon.png" />
+
+    <!-- ═══════════════════════════════════════════
+         OPEN GRAPH (Facebook, LinkedIn, WhatsApp)
+    ═══════════════════════════════════════════ -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="J-HarmoniX" />
+    <meta property="og:url" content="https://j-harmonix.dev/" />
+    <meta property="og:title" content="J-HarmoniX – Jazz Harmony Generator CLI" />
+    <meta property="og:description" content="Genera progressioni armoniche jazz dalla CLI. 15 scale, 4 stili jazz, modulazioni avanzate. Open source su GitHub." />
+    <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ec661160-0ab3-48c4-903b-6a2480d45412/id-preview-e202d035--1c1014ea-6f23-452c-bec3-f795b3674536.lovable.app-1771938133547.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="J-HarmoniX – Interfaccia CLI per la generazione di progressioni armoniche jazz" />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <!-- ═══════════════════════════════════════════
+         TWITTER / X CARD
+    ═══════════════════════════════════════════ -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta property="og:title" content="J-HarmoniX – Jazz Harmony Generator">
-    <meta name="twitter:title" content="J-HarmoniX – Jazz Harmony Generator">
-    <meta property="og:description" content="Genera progressioni armoniche jazz dalla CLI. 15 scale, 4 stili, modulazioni avanzate.">
-    <meta name="twitter:description" content="Genera progressioni armoniche jazz dalla CLI. 15 scale, 4 stili, modulazioni avanzate.">
-    <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ec661160-0ab3-48c4-903b-6a2480d45412/id-preview-e202d035--1c1014ea-6f23-452c-bec3-f795b3674536.lovable.app-1771938133547.png">
-    <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ec661160-0ab3-48c4-903b-6a2480d45412/id-preview-e202d035--1c1014ea-6f23-452c-bec3-f795b3674536.lovable.app-1771938133547.png">
-    
-    <!-- Google tag (gtag.js) -->
+    <meta name="twitter:site" content="@alfdagos" />
+    <meta name="twitter:creator" content="@alfdagos" />
+    <meta name="twitter:title" content="J-HarmoniX – Jazz Harmony Generator CLI" />
+    <meta name="twitter:description" content="Genera progressioni armoniche jazz dalla CLI. 15 scale, 4 stili jazz, modulazioni avanzate. Open source e gratuito." />
+    <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ec661160-0ab3-48c4-903b-6a2480d45412/id-preview-e202d035--1c1014ea-6f23-452c-bec3-f795b3674536.lovable.app-1771938133547.png" />
+    <meta name="twitter:image:alt" content="J-HarmoniX Jazz Harmony Generator CLI preview" />
+
+    <!-- ═══════════════════════════════════════════
+         PERFORMANCE: PRECONNECT & DNS-PREFETCH
+    ═══════════════════════════════════════════ -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://www.google-analytics.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+
+    <!-- ═══════════════════════════════════════════
+         STRUCTURED DATA – JSON-LD Schema.org
+    ═══════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://j-harmonix.dev/#software",
+          "name": "J-HarmoniX",
+          "alternateName": ["J-Harmonix", "JHarmoniX", "Jazz Harmony Generator"],
+          "applicationCategory": "MusicApplication",
+          "applicationSubCategory": "Music Composition Tool",
+          "operatingSystem": "Windows, macOS, Linux",
+          "description": "J-HarmoniX è un generatore di progressioni armoniche jazz da riga di comando (CLI) scritto in Java. Supporta 15 scale musicali, 4 stili armonici (Simple, Pop, Jazz Standard, Jazz Modern), 4 livelli di complessità degli accordi e modulazioni controllate. Ideale per musicisti, compositori e studenti di armonia jazz.",
+          "featureList": [
+            "15 scale musicali incluse modi, pentatoniche e blues",
+            "4 stili armonici: Simple, Pop, Jazz Standard, Jazz Modern",
+            "4 livelli di complessità: triadi, settime, none, estensioni complete",
+            "Modulazioni controllate: none, bassa, media, alta",
+            "CLI interattiva con autocompletamento e cronologia",
+            "Struttura canzone configurabile (AABA, verse-chorus, free-form)"
+          ],
+          "url": "https://j-harmonix.dev/",
+          "downloadUrl": "https://github.com/alfdagos/J-Harmonix",
+          "installUrl": "https://github.com/alfdagos/J-Harmonix",
+          "softwareVersion": "0.1.0",
+          "releaseNotes": "https://github.com/alfdagos/J-Harmonix/releases",
+          "codeRepository": "https://github.com/alfdagos/J-Harmonix",
+          "programmingLanguage": "Java",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock"
+          },
+          "author": {
+            "@type": "Person",
+            "@id": "https://github.com/alfdagos",
+            "name": "alfdagos",
+            "url": "https://github.com/alfdagos"
+          },
+          "image": "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/ec661160-0ab3-48c4-903b-6a2480d45412/id-preview-e202d035--1c1014ea-6f23-452c-bec3-f795b3674536.lovable.app-1771938133547.png",
+          "isAccessibleForFree": true,
+          "isFamilyFriendly": true,
+          "inLanguage": ["it", "en"],
+          "keywords": "jazz harmony, chord progression, music theory, CLI tool, Java, jazz scales, progressioni jazz"
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://j-harmonix.dev/#website",
+          "name": "J-HarmoniX",
+          "url": "https://j-harmonix.dev/",
+          "description": "Sito ufficiale di J-HarmoniX, il generatore di progressioni armoniche jazz da CLI open source",
+          "inLanguage": ["it", "en"],
+          "publisher": {
+            "@type": "Person",
+            "@id": "https://github.com/alfdagos",
+            "name": "alfdagos",
+            "url": "https://github.com/alfdagos"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://github.com/alfdagos/J-Harmonix/search?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://j-harmonix.dev/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Cos'è J-HarmoniX?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "J-HarmoniX è un generatore di progressioni armoniche jazz da riga di comando (CLI), scritto in Java. Permette di creare progressioni jazz personalizzate con 15 scale musicali, 4 stili armonici (Simple, Pop, Jazz Standard, Jazz Modern) e modulazioni controllate. È gratuito e open source."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Come si installa J-HarmoniX?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "1) Clona il repository: git clone https://github.com/alfdagos/J-Harmonix.git && cd J-Harmonix. 2) Compila con Maven: mvn clean install -DskipTests. 3) Avvia la CLI: java -jar j-harmonix-cli/target/j-harmonix-cli-0.1.0-SNAPSHOT.jar"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Quali scale musicali supporta J-HarmoniX?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "J-HarmoniX supporta 15 scale musicali: maggiore (MAJOR), minore dorian (DORIAN), frigio (PHRYGIAN), lidio (LYDIAN), misolidio (MIXOLYDIAN), eoliano (AEOLIAN), locrio (LOCRIAN), minore melodica (MELODIC_MINOR), minore armonica (HARMONIC_MINOR), pentatonica maggiore, pentatonica minore, blues (BLUES), intera (WHOLE_TONE), diminuita (DIMINISHED) e alterata."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "J-HarmoniX è gratuito e open source?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sì, J-HarmoniX è completamente gratuito e open source. Il codice sorgente è disponibile su GitHub all'indirizzo https://github.com/alfdagos/J-Harmonix e può essere scaricato, modificato e ridistribuito liberamente."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Su quali sistemi operativi funziona J-HarmoniX?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "J-HarmoniX funziona su tutti i sistemi operativi che supportano Java: Windows, macOS e Linux. È sufficiente avere Java (JDK 11+) e Apache Maven installati per compilarlo e avviarlo."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Che cos'è una progressione armonica jazz?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Una progressione armonica jazz è una sequenza di accordi che segue le regole dell'armonia jazz, includendo accordi di settima, nona, undicesima e tredicesima, con sostituzioni tritono, accordi alterati e modulazioni di tonalità. J-HarmoniX genera queste progressioni automaticamente dalla CLI con parametri configurabili."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Come si genera una progressione jazz con J-HarmoniX?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Una volta avviata la CLI, usa il comando generate con i parametri desiderati. Esempio: generate --tonic C --scale MAJOR --form AABA --style JAZZ_STANDARD --complexity SEVENTH_CHORDS --modulation MEDIUM. Usa 'scales' e 'styles' per vedere tutte le opzioni disponibili."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- ═══════════════════════════════════════════
+         GOOGLE ANALYTICS (non-blocking)
+    ═══════════════════════════════════════════ -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-32307WPGB6"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);} 
+      function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
-      gtag('config', 'G-32307WPGB6');
+      gtag('config', 'G-32307WPGB6', {
+        'anonymize_ip': true,
+        'cookie_flags': 'SameSite=None;Secure'
+      });
     </script>
   </head>
 
   <body>
+    <!-- Noscript fallback per crawler che non eseguono JS -->
+    <noscript>
+      <div style="max-width:800px;margin:40px auto;padding:20px;font-family:sans-serif;">
+        <h1>J-HarmoniX – Jazz Harmony Generator CLI</h1>
+        <p>J-HarmoniX è un generatore di progressioni armoniche jazz da riga di comando (CLI), open source e gratuito.</p>
+        <p>Visita <a href="https://github.com/alfdagos/J-Harmonix">il repository GitHub</a> per scaricare e installare J-HarmoniX.</p>
+        <p>Abilita JavaScript per la versione completa del sito.</p>
+      </div>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

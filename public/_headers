@@ -1,0 +1,37 @@
+# HTTP Headers per J-HarmoniX – Cache & Security
+# Compatibile con Netlify, Cloudflare Pages
+
+# ══════════════════════════════════════
+# ASSET STATICI (JS, CSS, immagini)
+# Cache lunga = LCP migliore
+# ══════════════════════════════════════
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+# ══════════════════════════════════════
+# FONT
+# ══════════════════════════════════════
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+# ══════════════════════════════════════
+# SITEMAP & ROBOTS
+# ══════════════════════════════════════
+/sitemap.xml
+  Cache-Control: public, max-age=86400
+  Content-Type: application/xml; charset=utf-8
+
+/robots.txt
+  Cache-Control: public, max-age=86400
+  Content-Type: text/plain; charset=utf-8
+
+# ══════════════════════════════════════
+# HTML (nessuna cache)
+# ══════════════════════════════════════
+/*
+  Cache-Control: no-cache, no-store, must-revalidate
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()

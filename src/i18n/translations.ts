@@ -120,6 +120,97 @@ export const translations = {
     it: "— Bringing jazz harmony to your fingertips 🎵",
     en: "— Bringing jazz harmony to your fingertips 🎵",
   },
+  footer_open_source: {
+    it: "Open Source",
+    en: "Open Source",
+  },
+  footer_license: {
+    it: "Licenza MIT",
+    en: "MIT License",
+  },
+  footer_built_with: {
+    it: "Scritto in Java · CLI Tool · Gratis per sempre",
+    en: "Written in Java · CLI Tool · Free forever",
+  },
+
+  // Key Takeaways (AI Search Optimization)
+  kt_title: {
+    it: "In sintesi",
+    en: "Key Takeaways",
+  },
+  kt_1: {
+    it: "J-HarmoniX genera progressioni armoniche jazz dalla riga di comando.",
+    en: "J-HarmoniX generates jazz harmonic progressions from the command line.",
+  },
+  kt_2: {
+    it: "Supporta 15 scale musicali inclusi modi, pentatoniche, blues e scala intera.",
+    en: "Supports 15 musical scales including modes, pentatonics, blues and whole tone.",
+  },
+  kt_3: {
+    it: "4 stili armonici: Simple, Pop, Jazz Standard e Jazz Modern con sostituzioni tritono.",
+    en: "4 harmonic styles: Simple, Pop, Jazz Standard and Jazz Modern with tritone substitutions.",
+  },
+  kt_4: {
+    it: "Complessità configurabile da triadi semplici a estensioni complete (9ª, 11ª, 13ª).",
+    en: "Configurable complexity from simple triads to full extensions (9th, 11th, 13th).",
+  },
+  kt_5: {
+    it: "100% gratuito, open source, scritto in Java, compatibile con Windows/macOS/Linux.",
+    en: "100% free, open source, written in Java, compatible with Windows/macOS/Linux.",
+  },
+
+  // FAQ Section
+  faq_label: { it: "Domande frequenti", en: "Frequently Asked Questions" },
+  faq_title_pre: { it: "Tutto quello che vuoi ", en: "Everything you want to " },
+  faq_title_highlight: { it: "sapere", en: "know" },
+  faq_q1: {
+    it: "Cos'è J-HarmoniX?",
+    en: "What is J-HarmoniX?",
+  },
+  faq_a1: {
+    it: "J-HarmoniX è un generatore di progressioni armoniche jazz da riga di comando (CLI), scritto in Java. Permette di creare progressioni jazz personalizzate con 15 scale, 4 stili armonici e modulazioni controllate. È completamente gratuito e open source.",
+    en: "J-HarmoniX is a command-line interface (CLI) tool that generates jazz harmonic progressions, written in Java. It allows creating custom jazz progressions with 15 scales, 4 harmonic styles and controlled modulations. It is completely free and open source.",
+  },
+  faq_q2: {
+    it: "Come si installa J-HarmoniX?",
+    en: "How do I install J-HarmoniX?",
+  },
+  faq_a2: {
+    it: "Clona il repository con Git, compila con Maven (mvn clean install -DskipTests) e avvia il JAR generato. Richiede Java JDK 11+ e Apache Maven installati sul sistema.",
+    en: "Clone the repository with Git, build with Maven (mvn clean install -DskipTests) and run the generated JAR. Requires Java JDK 11+ and Apache Maven installed on your system.",
+  },
+  faq_q3: {
+    it: "Quali scale musicali supporta?",
+    en: "What musical scales are supported?",
+  },
+  faq_a3: {
+    it: "Sono supportate 15 scale: maggiore, dorian, frigio, lidio, misolidio, eoliano, locrio, minore melodica, minore armonica, pentatonica maggiore, pentatonica minore, blues, intera (whole tone), diminuita e alterata.",
+    en: "15 scales are supported: major, dorian, phrygian, lydian, mixolydian, aeolian, locrian, melodic minor, harmonic minor, major pentatonic, minor pentatonic, blues, whole tone, diminished and altered.",
+  },
+  faq_q4: {
+    it: "Funziona su tutti i sistemi operativi?",
+    en: "Does it work on all operating systems?",
+  },
+  faq_a4: {
+    it: "Sì. Essendo un'applicazione Java, J-HarmoniX funziona su Windows, macOS e Linux. Qualsiasi sistema operativo con Java JDK 11 o superiore è compatibile.",
+    en: "Yes. Being a Java application, J-HarmoniX works on Windows, macOS and Linux. Any operating system with Java JDK 11 or higher is compatible.",
+  },
+  faq_q5: {
+    it: "Cos'è una progressione armonica jazz?",
+    en: "What is a jazz harmonic progression?",
+  },
+  faq_a5: {
+    it: "Una progressione armonica jazz è una sequenza di accordi che segue le convenzioni dell'armonia jazz: accordi di settima, nona, undicesima e tredicesima, sostituzioni tritono e modulazioni di tonalità. J-HarmoniX automatizza queste regole teoriche per generare progressioni pronte all'uso.",
+    en: "A jazz harmonic progression is a sequence of chords following jazz harmony conventions: seventh, ninth, eleventh and thirteenth chords, tritone substitutions and key modulations. J-HarmoniX automates these theoretical rules to generate ready-to-use progressions.",
+  },
+  faq_q6: {
+    it: "J-HarmoniX è gratuito? Ha un piano a pagamento?",
+    en: "Is J-HarmoniX free? Is there a paid plan?",
+  },
+  faq_a6: {
+    it: "J-HarmoniX è completamente gratuito, open source con licenza MIT. Non esistono piani a pagamento, abbonamenti o funzioni premium. Tutto il codice è disponibile su GitHub.",
+    en: "J-HarmoniX is completely free, open source under the MIT license. There are no paid plans, subscriptions or premium features. All code is available on GitHub.",
+  },
 } as const;
 
 export type TranslationKey = keyof typeof translations;

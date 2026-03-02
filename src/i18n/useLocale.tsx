@@ -17,6 +17,19 @@ const LocaleContext = createContext<LocaleContextType | null>(null);
 export const LocaleProvider = ({ children }: { children: ReactNode }) => {
   const [locale, setLocale] = useState<Locale>(detectLocale);
 
+  /**
+   * SEO: aggiorna <html lang="..."> dinamicamente al cambio lingua.
+   * Questo migliora l'accessibilità e i segnali semantici per i crawler.
+   */
+  useEffect(() => {
+    document.documentElement.lang = locale;
+    // Aggiorna il meta og:locale dinamicamente
+    const ogLocale = document.querySelector('meta[property="og:locale"]');
+    if (ogLocale) {
+      ogLocale.setAttribute("content", locale === "it" ? "it_IT" : "en_US");
+    }
+  }, [locale]);
+
   const t = (key: TranslationKey) => translations[key][locale];
 
   return (
@@ -31,3 +44,4 @@ export const useLocale = () => {
   if (!ctx) throw new Error("useLocale must be used within LocaleProvider");
   return ctx;
 };
+
